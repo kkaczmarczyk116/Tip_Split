@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <RelativeLayout
+        android:id="@+id/firstRelative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:id="@+id/totalBilltxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/bill_total_with_tax"
+            android:textSize="20sp"
+            android:textStyle="bold">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/billInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/totalBilltxt"
+            android:layout_marginStart="52dp"
+            android:layout_toEndOf="@id/totalBilltxt"
+            android:background="#AEFFAE"
+            android:hint="@string/total_amount"
+            android:inputType="numberDecimal"
+            android:textSize="20sp">
+
+        </EditText>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/tipPercent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/firstRelative"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp">
+
+        <TextView
+            android:id="@+id/pickPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:text="@string/tip_percent"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <RadioGroup
+            android:id="@+id/rgPercent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/pickPercent"
+            android:layout_centerHorizontal="true"
+            android:orientation="horizontal"
+            android:textSize="12sp">
+
+            <RadioButton
+                android:id="@+id/rb12"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/_12">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/rb15"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/_15">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/rb18"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:text="@string/_18">
+
+            </RadioButton>
+
+            <RadioButton
+                android:id="@+id/rb20"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:checked="false"
+                android:text="@string/_20">
+
+            </RadioButton>
+
+
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/tipAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/rgPercent"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/tip_amount"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tipOut"
+            android:layout_width="154dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tipAmount"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="73dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/tipAmount"
+            android:background="#D3D3D3"
+            android:hint="@string/_hint"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/totalTip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tipAmount"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/total_with_tip"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/withTip"
+            android:layout_width="155dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/totalTip"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="72dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/tipAmount"
+            android:background="#D3D3D3"
+            android:hint="@string/_hint"
+            android:textSize="20sp">
+
+        </TextView>
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/outcomeRelative"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tipPercent">
+
+        <TextView
+            android:id="@+id/numberOfPeople"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/number_of_people"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <EditText
+            android:id="@+id/numberInput"
+            android:layout_width="55dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/numberOfPeople"
+            android:layout_marginStart="21dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/numberOfPeople"
+            android:background="#AEFFAE"
+            android:hint="@string/_0"
+            android:inputType="number">
+
+        </EditText>
+
+        <Button
+            android:id="@+id/btNumber"
+            android:layout_width="63dp"
+            android:layout_height="36dp"
+            android:layout_alignBaseline="@+id/numberOfPeople"
+            android:layout_marginStart="10dp"
+            android:layout_toEndOf="@+id/numberInput"
+            android:text="@string/go">
+
+        </Button>
+
+        <TextView
+            android:id="@+id/totalPerPersontxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/numberOfPeople"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/total_per_person"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/totalPerPersonOutcome"
+            android:layout_width="157dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/totalPerPersontxt"
+            android:layout_alignStart="@+id/numberInput"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@id/totalPerPersontxt"
+            android:background="#D3D3D3"
+            android:hint="@string/_hint"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/overagetxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/totalPerPersontxt"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/overage"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/overage"
+            android:layout_width="153dp"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/overagetxt"
+            android:layout_alignStart="@+id/totalPerPersonOutcome"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="1dp"
+            android:layout_marginEnd="20dp"
+            android:layout_toEndOf="@+id/overagetxt"
+            android:background="#D3D3D3"
+            android:hint="@string/_hint"
+            android:textSize="20sp">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/overagetxt"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="50dp"
+            android:text="@string/clear"
+            android:onClick="clickClear">
+
+        </Button>
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
